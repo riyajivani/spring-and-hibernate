@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!--  configuration of h2 database.  -->
+    <property name="connection.url">jdbc:h2:~/test</property>
+    <property name="connection.driver_class">org.h2.Driver</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+    <property name="connection.username">sa</property>
+    <property name="connection.password"/>
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <mapping class="org.example.entities.Student"/>
+  </session-factory>
+</hibernate-configuration>
+
+
+<!--h2 is a virtual database that you can use for testing purpose that you not need to dwnld in your system.
+    first of all run this code...
+    then after go to C:\Users\riyaj\.m2\repository\com\h2database\h2\2.2.220 this location
+    open cmd at this location
+    then in cmd run the command: java -jar h2-2.2.220.jar
+    it will open your virtual database in that click connect
+    and in cmd yo have to do ctrl+c and then run the query in that database.-->
